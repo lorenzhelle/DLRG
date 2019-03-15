@@ -36,6 +36,8 @@ public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRe
         holder.mKurs = mKurse.get(position);
         holder.mIdView.setText(String.valueOf(mKurse.get(position).getID()));
         holder.mWochentag.setText(mKurse.get(position).getWochentag());
+        holder.mBezeichnung.setText(mKurse.get(position).getBezeichnung());
+        holder.mUhrzeit.setText(mKurse.get(position).getUhrzeit());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,8 @@ public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRe
         public final View mView;
         public final TextView mIdView;
         public final TextView mWochentag;
+        public final TextView mBezeichnung;
+        public final TextView mUhrzeit;
         public Kurs mKurs;
 
         public ViewHolder(View view) {
@@ -65,6 +69,8 @@ public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRe
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.kurs_id);
             mWochentag = (TextView) view.findViewById(R.id.kurs_wochentag);
+            mBezeichnung = (TextView)view.findViewById(R.id.kurs_bezeichnung);
+            mUhrzeit = (TextView)view.findViewById(R.id.kurs_uhrzeit);
         }
 
         @Override

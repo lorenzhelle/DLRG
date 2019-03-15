@@ -81,7 +81,7 @@ public class KursFragment extends Fragment {
         //create VolleyService to get Data from API
         VolleyService volleyService = new VolleyService(apiResult,getContext());
         //get Data from URL -> interface
-        volleyService.getDataFromUrl("http://192.168.64.2/api_db.php");
+        volleyService.getDataFromUrl("http://192.168.64.2/api_db_markus.php");
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -152,7 +152,7 @@ public class KursFragment extends Fragment {
         for(int i = 0; i<response.length();i++){
             try {
                 JSONObject jsonObject = response.getJSONObject(i);
-                Kurs kurs = new Kurs(jsonObject.getInt("Kurs_ID"),jsonObject.getString("Wochentag"));
+                Kurs kurs = new Kurs(jsonObject.getInt("Kurs_ID"), jsonObject.getString("Bezeichnung"), jsonObject.getString("Wochentag"), jsonObject.getString("Uhrzeit"));
                 kurse.add(kurs);
             } catch (JSONException e) {
                 e.printStackTrace();
