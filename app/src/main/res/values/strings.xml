@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DLRG</string>
+    <string name="wrongPin">Falsche Pin, versuche es nochmal</string>
+    <string name="enterPin">Bitte PIN eingeben</string>
 </resources>

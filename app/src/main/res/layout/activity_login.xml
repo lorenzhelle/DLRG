@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="180dp"
@@ -41,15 +41,26 @@
         android:drawableLeft="@drawable/ic_lock_black"
         android:drawablePadding="8dp"
 
-        android:textSize="30sp"
         android:ems="4"
         android:hint="Pin"
         android:inputType="textPassword"
         android:maxLength="4"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/confirmPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pin"
+        app:layout_constraintStart_toEndOf="@+id/pin"
+        app:layout_constraintTop_toTopOf="@+id/pin"
+        app:srcCompat="@drawable/ic_arrow_forward_black_24dp" />
 
 
 </android.support.constraint.ConstraintLayout>
