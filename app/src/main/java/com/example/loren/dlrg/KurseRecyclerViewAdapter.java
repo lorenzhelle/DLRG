@@ -14,12 +14,12 @@ import java.util.List;
 /**
  *
  */
-public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRecyclerViewAdapter.ViewHolder> {
+public class KurseRecyclerViewAdapter extends RecyclerView.Adapter<KurseRecyclerViewAdapter.ViewHolder> {
 
     private final List<Kurs> mKurse;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyPersonRecyclerViewAdapter(List<Kurs> items, OnListFragmentInteractionListener listener) {
+    public KurseRecyclerViewAdapter(List<Kurs> items, OnListFragmentInteractionListener listener) {
         mKurse = items;
         mListener = listener;
     }
@@ -27,7 +27,7 @@ public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRe
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_person, parent, false);
+                .inflate(R.layout.kurs_item_list, parent, false);
         return new ViewHolder(view);
     }
 

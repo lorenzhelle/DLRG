@@ -10,4 +10,4 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".KursFragment"
-    tools:listitem="@layout/fragment_person" />
+    tools:listitem="@layout/kurs_item_list" />

@@ -40,7 +40,7 @@ public class KursFragment extends Fragment {
 
     ArrayList<Kurs> kurse;
     private RecyclerView recyclerView;
-    private MyPersonRecyclerViewAdapter mAdapter;
+    private KurseRecyclerViewAdapter mAdapter;
 
 
     /**
@@ -72,7 +72,7 @@ public class KursFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_person_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_kurse, container, false);
 
         //Interface for API Volley call
         initApiResult();
@@ -92,7 +92,7 @@ public class KursFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            mAdapter = new MyPersonRecyclerViewAdapter(kurse, mListener);
+            mAdapter = new KurseRecyclerViewAdapter(kurse, mListener);
             recyclerView.setAdapter(mAdapter);
         }
         return view;
