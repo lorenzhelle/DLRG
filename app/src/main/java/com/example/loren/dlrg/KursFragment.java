@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.android.volley.VolleyError;
 import com.example.loren.dlrg.Model.Kurs;
-import com.example.loren.dlrg.Model.VolleyService;
+import com.example.loren.dlrg.Utilities.VolleyService;
 import com.example.loren.dlrg.interfaces.ApiResult;
 
 import org.json.JSONArray;
@@ -30,7 +30,7 @@ import java.util.ArrayList;
  */
 public class KursFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
+
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
@@ -55,7 +55,7 @@ public class KursFragment extends Fragment {
     public static KursFragment newInstance(int columnCount) {
         KursFragment fragment = new KursFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
+
         fragment.setArguments(args);
         return fragment;
     }

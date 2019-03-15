@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity  {
         pinInput = (EditText)findViewById(R.id.pin);
         confirmPin = (ImageView)findViewById(R.id.confirmPin);
 
+        // todo Default Pin ändern
         setPin("1234");
 
         Log.d("PIN","AKtuelle Pin: " + getPin());

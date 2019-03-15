@@ -1,27 +1,25 @@
-package com.example.loren.dlrg.Model;
+package com.example.loren.dlrg.Utilities;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.loren.dlrg.interfaces.ApiResult;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class VolleyService {
 
+    private static final String TAG = "VolleyService";
     ApiResult mResultCallback;
     Context mContext;
 
+    //pass Interface in Constructor
     public VolleyService(ApiResult resultCallback, Context context) {
         mResultCallback = resultCallback;
         mContext = context;
@@ -39,10 +37,7 @@ public class VolleyService {
                     new Response.Listener<JSONArray>() {
                         @Override
                         public void onResponse(JSONArray response) {
-
                             mResultCallback.notifySuccess(response);
-
-
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -51,15 +46,10 @@ public class VolleyService {
                 }
             });
 
-            jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(
-                    4000,
-                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
             queue.add(jsonArrayRequest);
 
         } catch (Exception e) {
-
+            Log.d(TAG, "Error: " + e.getMessage());
         }
 
 
