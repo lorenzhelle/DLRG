@@ -1,16 +1,10 @@
 package com.example.loren.dlrg;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.android.volley.VolleyError;
-import com.example.loren.dlrg.Model.Person;
-import com.example.loren.dlrg.Model.VolleyService;
-import com.example.loren.dlrg.interfaces.ApiResult;
-
-import org.json.JSONArray;
+import com.example.loren.dlrg.Model.Kurs;
 
 public class MainListActivity extends AppCompatActivity implements PersonFragment.OnListFragmentInteractionListener{
 
@@ -25,8 +19,8 @@ public class MainListActivity extends AppCompatActivity implements PersonFragmen
     }
 
     @Override
-    public void onListFragmentInteraction(Person person) {
-        Toast.makeText(getApplicationContext(),"Wer hat gelickt?" + person.getName(),Toast.LENGTH_LONG).show();
+    public void onListFragmentInteraction(Kurs kurs) {
+        Toast.makeText(getApplicationContext(),"Wer hat gelickt?" + kurs.getID(),Toast.LENGTH_LONG).show();
     }
 
 

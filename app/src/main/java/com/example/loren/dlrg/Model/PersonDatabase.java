@@ -1,29 +1,13 @@
 package com.example.loren.dlrg.Model;
 
-import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class PersonDatabase {
 
-    public static ArrayList<Person> getSampleListOfPersons(){
-        ArrayList <Person> sampleData = new ArrayList<>();
-        sampleData.add(new Person(1,"Lorenz"));
-        sampleData.add(new Person(2,"Markus"));
+    public static ArrayList<Kurs> getSampleListOfPersons(){
+        ArrayList <Kurs> sampleData = new ArrayList<>();
+        sampleData.add(new Kurs(1,"DIenstag"));
+        sampleData.add(new Kurs(2,"Donnerstag"));
         return sampleData;
     }
 

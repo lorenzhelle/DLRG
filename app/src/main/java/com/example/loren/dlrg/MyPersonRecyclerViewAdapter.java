@@ -6,23 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.loren.dlrg.Model.Person;
+import com.example.loren.dlrg.Model.Kurs;
 import com.example.loren.dlrg.PersonFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
+ *
  */
 public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Person> mPersons;
+    private final List<Kurs> mKurse;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyPersonRecyclerViewAdapter(List<Person> items, OnListFragmentInteractionListener listener) {
-        mPersons = items;
+    public MyPersonRecyclerViewAdapter(List<Kurs> items, OnListFragmentInteractionListener listener) {
+        mKurse = items;
         mListener = listener;
     }
 
@@ -35,9 +33,9 @@ public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRe
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mPerson = mPersons.get(position);
-        holder.mIdView.setText(String.valueOf(mPersons.get(position).getID()));
-        holder.mContentView.setText(mPersons.get(position).getName());
+        holder.mKurs = mKurse.get(position);
+        holder.mIdView.setText(String.valueOf(mKurse.get(position).getID()));
+        holder.mWochentag.setText(mKurse.get(position).getWochentag());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +43,7 @@ public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRe
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mPerson);
+                    mListener.onListFragmentInteraction(holder.mKurs);
                 }
             }
         });
@@ -53,25 +51,25 @@ public class MyPersonRecyclerViewAdapter extends RecyclerView.Adapter<MyPersonRe
 
     @Override
     public int getItemCount() {
-        return mPersons.size();
+        return mKurse.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView mIdView;
-        public final TextView mContentView;
-        public Person mPerson;
+        public final TextView mWochentag;
+        public Kurs mKurs;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.person_id);
-            mContentView = (TextView) view.findViewById(R.id.person_name);
+            mIdView = (TextView) view.findViewById(R.id.kurs_id);
+            mWochentag = (TextView) view.findViewById(R.id.kurs_wochentag);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + mWochentag.getText() + "'";
         }
     }
 }

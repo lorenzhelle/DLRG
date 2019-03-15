@@ -12,8 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.volley.VolleyError;
-import com.example.loren.dlrg.Model.Person;
-import com.example.loren.dlrg.Model.PersonDatabase;
+import com.example.loren.dlrg.Model.Kurs;
 import com.example.loren.dlrg.Model.VolleyService;
 import com.example.loren.dlrg.interfaces.ApiResult;
 
@@ -22,7 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -40,7 +38,7 @@ public class PersonFragment extends Fragment {
     //Interface for Volley Call
     ApiResult apiResult;
 
-    ArrayList<Person> people;
+    ArrayList<Kurs> kurse;
     private RecyclerView recyclerView;
     private MyPersonRecyclerViewAdapter mAdapter;
 
@@ -78,12 +76,12 @@ public class PersonFragment extends Fragment {
 
         //Interface for API Volley call
         initApiResult();
-        people = new ArrayList<>();
+        kurse = new ArrayList<>();
 
         //create VolleyService to get Data from API
         VolleyService volleyService = new VolleyService(apiResult,getContext());
         //get Data from URL -> interface
-        volleyService.getDataFromUrl("http://192.168.178.40/MyApi/Api.php");
+        volleyService.getDataFromUrl("http://192.168.64.2/api_db.php");
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -94,7 +92,7 @@ public class PersonFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            mAdapter = new MyPersonRecyclerViewAdapter(people, mListener);
+            mAdapter = new MyPersonRecyclerViewAdapter(kurse, mListener);
             recyclerView.setAdapter(mAdapter);
         }
         return view;
@@ -129,8 +127,7 @@ public class PersonFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(Person person);
+        void onListFragmentInteraction(Kurs kurs);
     }
 
     public void initApiResult(){
@@ -155,8 +152,8 @@ public class PersonFragment extends Fragment {
         for(int i = 0; i<response.length();i++){
             try {
                 JSONObject jsonObject = response.getJSONObject(i);
-                Person person = new Person(jsonObject.getInt("id"),jsonObject.getString("name"));
-                people.add(person);
+                Kurs kurs = new Kurs(jsonObject.getInt("Kurs_ID"),jsonObject.getString("Wochentag"));
+                kurse.add(kurs);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
