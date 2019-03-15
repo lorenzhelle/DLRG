@@ -3,6 +3,7 @@ package com.example.loren.dlrg.Model;
 import android.content.Context;
 import android.util.Log;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -49,6 +50,12 @@ public class VolleyService {
                     mResultCallback.notifyError(error);
                 }
             });
+
+            jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    4000,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
             queue.add(jsonArrayRequest);
 
         } catch (Exception e) {

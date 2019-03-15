@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class PersonFragment extends Fragment {
+public class KursFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -47,13 +47,13 @@ public class PersonFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public PersonFragment() {
+    public KursFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static PersonFragment newInstance(int columnCount) {
-        PersonFragment fragment = new PersonFragment();
+    public static KursFragment newInstance(int columnCount) {
+        KursFragment fragment = new KursFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);

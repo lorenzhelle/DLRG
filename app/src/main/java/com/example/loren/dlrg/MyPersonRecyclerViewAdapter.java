@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.loren.dlrg.Model.Kurs;
-import com.example.loren.dlrg.PersonFragment.OnListFragmentInteractionListener;
+import com.example.loren.dlrg.KursFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
 

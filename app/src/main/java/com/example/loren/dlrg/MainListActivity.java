@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import com.example.loren.dlrg.Model.Kurs;
 
-public class MainListActivity extends AppCompatActivity implements PersonFragment.OnListFragmentInteractionListener{
+public class MainListActivity extends AppCompatActivity implements KursFragment.OnListFragmentInteractionListener{
 
 
 
